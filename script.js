@@ -115,5 +115,10 @@ console.log("Добуток позитивних елементів: " + multOfP
 
 
 
-let filteredArray = array.filter((element) => element === maxElement);
-console.log("Масив тільки з максимальним елементом: " + filteredArray);
+function findZeroAndMaxElement(array) {
+    let maxElement = Math.max(...array);
+    let modifiedArray = array.map(element => (element === maxElement) ? element : 0);
+    return modifiedArray;
+}
+let modifiedArray = findZeroAndMaxElement(array);
+console.log("Масив після обнулення, окрім найбільшого елемента: " + modifiedArray);
